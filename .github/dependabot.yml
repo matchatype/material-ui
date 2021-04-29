@@ -1,0 +1,72 @@
+version: 2
+registries:
+  npm-registry-npm-pkg-github-com-matchatype:
+    type: npm-registry
+    url: https://npm.pkg.github.com/matchatype
+    token: "${{secrets.NPM_REGISTRY_NPM_PKG_GITHUB_COM_MATCHATYPE_TOKEN}}"
+  npm-registry-npm-pkg-github-com-littlerobotfriends:
+    type: npm-registry
+    url: https://npm.pkg.github.com/littlerobotfriends
+    token: "${{secrets.NPM_REGISTRY_NPM_PKG_GITHUB_COM_LITTLEROBOTFRIENDS_TOKEN}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: "@babel/*"
+    versions:
+    - ">= 0"
+  - dependency-name: babel-plugin-preval
+    versions:
+    - ">= 3.0"
+  - dependency-name: core-js
+    versions:
+    - ">= 0"
+  - dependency-name: jss-*
+    versions:
+    - ">= 0"
+  - dependency-name: raw-loader
+    versions:
+    - ">= 0"
+  - dependency-name: react-dom
+    versions:
+    - ">= 0"
+  - dependency-name: react-is
+    versions:
+    - ">= 0"
+  - dependency-name: react-test-renderer
+    versions:
+    - ">= 0"
+  - dependency-name: tslint
+    versions:
+    - 5.x
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - ">= 0"
+  - dependency-name: "@types/fs-extra"
+    versions:
+    - 9.0.4
+    - 9.0.6
+  - dependency-name: marked
+    versions:
+    - 1.2.7
+  - dependency-name: autoprefixer
+    versions:
+    - 10.0.2
+  - dependency-name: react-jss
+    versions:
+    - 10.5.0
+  - dependency-name: dayjs
+    versions:
+    - 1.9.6
+  - dependency-name: danger
+    versions:
+    - 10.5.1
+  registries:
+  - npm-registry-npm-pkg-github-com-matchatype
+  - npm-registry-npm-pkg-github-com-littlerobotfriends
